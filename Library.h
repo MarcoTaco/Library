@@ -57,7 +57,10 @@ void Library::deleteBook(char bookTitle[])
 
 Book Library::*searchBook(char bookName[])
 {
-
+    for(int i = 0; i < numInBooks; i++)
+    {
+        return &inventory[i];
+    }
 }
 
 #endif // LIBRARY_H_INCLUDED
