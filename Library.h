@@ -47,7 +47,13 @@ void Library::deleteBook(char bookTitle[])
 {
     for(int i = 0; i < bookInLibrary; i++)
     {
-        delete inventory[i].title;
+        //comparing the bookTitle length from the copied version
+        // if equal to 0, then it is the same as the inserted one
+        // thus showing that the book title is correct
+        if(strcmp(bookTitle, inventory[i].title) == 0)
+        {
+            delete inventory[i].title;
+        }
     }
     cout << "Thanks for deleting the book from the library." << endl;
     
@@ -59,7 +65,12 @@ Book Library::*searchBook(char bookName[])
 {
     for(int i = 0; i < numInBooks; i++)
     {
-        return &inventory[i];
+        // comparing the booktitle length from the copied version
+        // if equal to 0, then they are the same
+        if(strcmp(bookTitle, inventory[i].title) == 0)
+        {
+            return &inventory[i];
+        }
     }
 }
 
